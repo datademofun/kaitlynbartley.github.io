@@ -178,6 +178,12 @@
         self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
+        var type_column = "'type'";
+        var tempWhereClause = [];
+        if ( $("#cbType1").is(':checked')) tempWhereClause.push("RENT");
+        if ( $("#cbType2").is(':checked')) tempWhereClause.push("BUY");
+        self.whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
+
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
