@@ -180,8 +180,8 @@
         //-----custom filters-----
         var type_column = "'INCOME_REQUIRED_TO_RENT_OR_BUY'";
         var tempWhereClause = [];
-        if ( $("#cbType1").is(':checked')) tempWhereClause.push("RENT");
-        if ( $("#cbType2").is(':checked')) tempWhereClause.push("BUY");
+        if ( $("#rbType1").is(':checked')) tempWhereClause.push("RENT");
+        if ( $("#rbType2").is(':checked')) tempWhereClause.push("BUY");
         self.whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
         //-----end of custom filters-----
