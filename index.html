@@ -39,24 +39,22 @@
           <p>This is a demo of <a href='http://derekeder.com'>Derek Eder's</a> <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> using Google <a href='http://support.google.com/fusiontables/answer/2571232?hl=en&ref_topic=1652595'>Fusion Tables</a>. Use this section to give a little context to your map.</p>
           <div class='well'>
             <h4>
-              I want to: 
+              Address <small>(<a id='find_me' href='#'>find me</a>)</small>
             </h4>
-            <ul class='inputs-list unstyled'>
-              <li>
-                <label class='radio inline'>
-                  <input type='radio' name='types' id='rbType1' checked />
-                  <span class='filter-box filter-blue'></span>
-                  Rent
-                </label>
-              </li>
-              <li>
-                <label class='radio inline'>
-                  <input type='radio' name='types' id='rbType2' />
-                  <span class='filter-box filter-red'></span>
-                  Buy
-                </label>
-              </li>
-            </ul>
+            <p>
+              <input class='form-control' id='search_address' placeholder='Enter an address or an intersection' type='text' />
+            </p>
+            <p>
+              <label>
+                within
+                <select id='search_radius'>
+                  <option value='400'>2 blocks</option>
+                  <option value='805'>1/2 mile</option>
+                  <option value='1610'>1 mile</option>
+                  <option value='3220'>2 miles</option>
+                </select>
+              </label>
+            </p>
 
             <br />
             <h4>Custom filters and views</h4>
@@ -124,7 +122,7 @@
             fusionTableId:      "1gO9iqx974sFzlUijxflcpsC8zHvIB7srh7qIWwXt",
             googleApiKey:       "AIzaSyDMVvc5BGKpzeR21Iy131xWQlCr4Iki0Bg",
             locationColumn:     "Zip",
-            map_center:         [37.337673, -121.889717],
+            map_center:         [37.337673, -121.889716],
             locationScope:      "california"
           });
 

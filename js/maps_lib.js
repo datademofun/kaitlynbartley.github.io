@@ -42,8 +42,8 @@
         else
             this.addrMarkerImage = "images/blue-pushpin.png"
 
-    	this.currentPinpoint = null;
-    	$("#result_count").html("");
+        this.currentPinpoint = null;
+        $("#result_count").html("");
 
         // disable Google's points of interest markers in the basemap
         var basemapStyles =[
@@ -117,73 +117,67 @@
     };
 
 
-    // MapsLib.prototype.getgeoCondition = function (address, callback) {
-    //     var self = this;
-    //     if (address !== "") {
-    //         if (address.toLowerCase().indexOf(self.locationScope) === -1) {
-    //             address = address + " " + self.locationScope;
-    //         }
-    //         self.geocoder.geocode({
-    //             'address': address
-    //         }, function (results, status) {
-    //             if (status === google.maps.GeocoderStatus.OK) {
-    //                 self.currentPinpoint = results[0].geometry.location;
-    //                 var map = self.map;
+    MapsLib.prototype.getgeoCondition = function (address, callback) {
+        var self = this;
+        if (address !== "") {
+            if (address.toLowerCase().indexOf(self.locationScope) === -1) {
+                address = address + " " + self.locationScope;
+            }
+            self.geocoder.geocode({
+                'address': address
+            }, function (results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    self.currentPinpoint = results[0].geometry.location;
+                    var map = self.map;
 
-    //                 $.address.parameter('address', encodeURIComponent(address));
-    //                 $.address.parameter('radius', encodeURIComponent(self.searchRadius));
-    //                 map.setCenter(self.currentPinpoint);
-    //                 // set zoom level based on search radius
-    //                 if (self.searchRadius >= 1610000) map.setZoom(4); // 1,000 miles
-    //                 else if (self.searchRadius >= 805000) map.setZoom(5); // 500 miles
-    //                 else if (self.searchRadius >= 402500) map.setZoom(6); // 250 miles
-    //                 else if (self.searchRadius >= 161000) map.setZoom(7); // 100 miles
-    //                 else if (self.searchRadius >= 80500) map.setZoom(8); // 100 miles
-    //                 else if (self.searchRadius >= 40250) map.setZoom(9); // 100 miles
-    //                 else if (self.searchRadius >= 16100) map.setZoom(11); // 10 miles
-    //                 else if (self.searchRadius >= 8050) map.setZoom(12); // 5 miles
-    //                 else if (self.searchRadius >= 3220) map.setZoom(13); // 2 miles
-    //                 else if (self.searchRadius >= 1610) map.setZoom(14); // 1 mile
-    //                 else if (self.searchRadius >= 805) map.setZoom(15); // 1/2 mile
-    //                 else if (self.searchRadius >= 400) map.setZoom(16); // 1/4 mile
-    //                 else self.map.setZoom(17);
+                    $.address.parameter('address', encodeURIComponent(address));
+                    $.address.parameter('radius', encodeURIComponent(self.searchRadius));
+                    map.setCenter(self.currentPinpoint);
+                    // set zoom level based on search radius
+                    if (self.searchRadius >= 1610000) map.setZoom(4); // 1,000 miles
+                    else if (self.searchRadius >= 805000) map.setZoom(5); // 500 miles
+                    else if (self.searchRadius >= 402500) map.setZoom(6); // 250 miles
+                    else if (self.searchRadius >= 161000) map.setZoom(7); // 100 miles
+                    else if (self.searchRadius >= 80500) map.setZoom(8); // 100 miles
+                    else if (self.searchRadius >= 40250) map.setZoom(9); // 100 miles
+                    else if (self.searchRadius >= 16100) map.setZoom(11); // 10 miles
+                    else if (self.searchRadius >= 8050) map.setZoom(12); // 5 miles
+                    else if (self.searchRadius >= 3220) map.setZoom(13); // 2 miles
+                    else if (self.searchRadius >= 1610) map.setZoom(14); // 1 mile
+                    else if (self.searchRadius >= 805) map.setZoom(15); // 1/2 mile
+                    else if (self.searchRadius >= 400) map.setZoom(16); // 1/4 mile
+                    else self.map.setZoom(17);
 
-    //                 if (self.addrMarkerImage != '') {
-    //                     self.addrMarker = new google.maps.Marker({
-    //                         position: self.currentPinpoint,
-    //                         map: self.map,
-    //                         icon: self.addrMarkerImage,
-    //                         animation: google.maps.Animation.DROP,
-    //                         title: address
-    //                     });
-    //                 }
-    //                 var geoCondition = " AND ST_INTERSECTS(" + self.locationColumn + ", CIRCLE(LATLNG" + self.currentPinpoint.toString() + "," + self.searchRadius + "))";
-    //                 callback(geoCondition);
-    //                 self.drawSearchRadiusCircle(self.currentPinpoint);
-    //             } else {
-    //                 alert("We could not find your address: " + status);
-    //                 callback('');
-    //             }
-    //         });
-    //     } else {
-    //         callback('');
-    //     }
-    // };
+                    if (self.addrMarkerImage != '') {
+                        self.addrMarker = new google.maps.Marker({
+                            position: self.currentPinpoint,
+                            map: self.map,
+                            icon: self.addrMarkerImage,
+                            animation: google.maps.Animation.DROP,
+                            title: address
+                        });
+                    }
+                    var geoCondition = " AND ST_INTERSECTS(" + self.locationColumn + ", CIRCLE(LATLNG" + self.currentPinpoint.toString() + "," + self.searchRadius + "))";
+                    callback(geoCondition);
+                    self.drawSearchRadiusCircle(self.currentPinpoint);
+                } else {
+                    alert("We could not find your address: " + status);
+                    callback('');
+                }
+            });
+        } else {
+            callback('');
+        }
+    };
 
-    // MapsLib.prototype.doSearch = function () {
-    //     var self = this;
-    //     self.clearSearch();
-    //     var address = $("#search_address").val();
-    //     self.searchRadius = $("#search_radius").val();
-    //     self.whereClause = self.locationColumn + " not equal to ''";
+    MapsLib.prototype.doSearch = function () {
+        var self = this;
+        self.clearSearch();
+        var address = $("#search_address").val();
+        self.searchRadius = $("#search_radius").val();
+        self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
-        var type_column = "'INCOME_REQUIRED_TO_RENT_OR_BUY'";
-        var tempWhereClause = [];
-        if ( $("#rbType1").is(':checked')) tempWhereClause.push("RENT");
-        if ( $("#rbType2").is(':checked')) tempWhereClause.push("BUY");
-        self.whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
-
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
