@@ -178,6 +178,10 @@
         self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
+        var type_column = "'type'";
+
+        if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
+        if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
