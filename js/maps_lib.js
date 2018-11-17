@@ -178,7 +178,7 @@
         self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
-        var type_column = "'type'";
+        var type_column = "INCOME_REQUIRED_TO_RENT_OR_BUY";
 
         if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
         if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
@@ -200,7 +200,7 @@
 
     MapsLib.prototype.getInfo = function (callback) {
         var self = this;
-        jQuery.ajax({
+rbtype        jQuery.ajax({
             url: 'https://www.googleapis.com/fusiontables/v2/tables/' + self.fusionTableId + '?key=' + self.googleApiKey,
             dataType: 'json'
         }).done(function (response) {
