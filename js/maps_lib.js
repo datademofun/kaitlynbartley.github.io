@@ -86,6 +86,22 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
+        $("#age-slider").slider({
+            orientation: "horizontal",
+            range: true,
+            min: 57500,
+            max: 1077300,
+            values: [57500, 1077300],
+            step: 5,
+            slide: function (event, ui) {
+                $("#age-selected-start").html(ui.values[0]);
+                $("#age-selected-end").html(ui.values[1]);
+            },
+            stop: function(event, ui) {
+              self.doSearch();
+            }
+        });
+
         //-----end of custom initializers-----
 
         //run the default search when page loads
@@ -182,6 +198,9 @@
 
         if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
         if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
+
+        self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' >= '" + $("#age-selected-start").html() + "'";
+        self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' <= '" + $("#age-selected-end").html() + "'";
 
         //-----end of custom filters-----
 
