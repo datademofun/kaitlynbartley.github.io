@@ -102,7 +102,7 @@
             }
         });
 
-        // $("#rbType1").props("checked", "checked");
+        $("#rbType1").props("checked", "checked");
 
         //-----end of custom initializers-----
 
