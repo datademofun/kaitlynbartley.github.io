@@ -102,6 +102,8 @@
             }
         });
 
+        $("#rbType1").props("checked", "checked");
+
         //-----end of custom initializers-----
 
         //run the default search when page loads
