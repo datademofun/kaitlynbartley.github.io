@@ -200,7 +200,7 @@
 
     MapsLib.prototype.getInfo = function (callback) {
         var self = this;
-rbType        jQuery.ajax({
+        jQuery.ajax({
             url: 'https://www.googleapis.com/fusiontables/v2/tables/' + self.fusionTableId + '?key=' + self.googleApiKey,
             dataType: 'json'
         }).done(function (response) {
