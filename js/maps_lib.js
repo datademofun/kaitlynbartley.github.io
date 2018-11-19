@@ -91,7 +91,7 @@
             range: true,
             min: 57500,
             max: 1077300,
-            values: ["57,500", "1,077,300"],
+            values: [57500, 1077300],
             step: 5,
             slide: function (event, ui) {
                 $("#age-selected-start").html(ui.values[0]);
