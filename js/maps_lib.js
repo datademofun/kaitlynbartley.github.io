@@ -86,7 +86,6 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
-        // $("#rbType1").props("checked", "checked");
         $("#age-slider").slider({
             orientation: "horizontal",
             range: true,
