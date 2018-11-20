@@ -200,7 +200,7 @@
         if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
         if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
 
-        self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' >= '" + $("#age-selected-start").html() + "'";
+        // self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' >= '" + $("#age-selected-start").html() + "'";
         self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' <= '" + $("#age-selected-end").html() + "'";
 
         //-----end of custom filters-----
