@@ -94,7 +94,7 @@
             values: [500000],
             step: 5,
             slide: function (event, ui) {
-                $("#age-selected-start").html(ui.values[0]);
+                // $("#age-selected-start").html(ui.values[0]);
                 $("#age-selected-end").html(ui.values[1]);
             },
             stop: function(event, ui) {
@@ -200,7 +200,7 @@
         if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
         if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
 
-        self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' >= '" + $("#age-selected-start").html() + "'";
+        // self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' >= '" + $("#age-selected-start").html() + "'";
         self.whereClause += " AND 'INCOME_REQUIRED_TO_RENT_OR_BUY' <= '" + $("#age-selected-end").html() + "'";
 
         //-----end of custom filters-----
