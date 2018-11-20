@@ -89,9 +89,9 @@
         $("#age-slider").slider({
             orientation: "horizontal",
             range: false,
-            min: 0,
-            max: 1077300,
-            values: [500000],
+            // min: 0,
+            // max: 1077300,
+            values: [1077300],
             step: 5,
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
