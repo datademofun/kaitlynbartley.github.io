@@ -110,6 +110,9 @@
     };
 
     //-----custom functions-----
+    var number = "age-selected-end";
+    document.body.innerHTML = number.toLocaleString();
+
     //-----end of custom functions-----
 
     MapsLib.prototype.submitSearch = function (whereClause, map) {
