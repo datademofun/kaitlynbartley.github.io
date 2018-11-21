@@ -110,8 +110,13 @@
     };
 
     //-----custom functions-----
-    // var number = "age-selected-end";
-    // document.body.innerHTML = number.toLocaleString();
+
+    MapsLib.prototype.addCommas = function() {    
+        var number = "age-selected-end";
+        document.body.innerHTML = number.toLocaleString();
+    };
+
+
 
     //-----end of custom functions-----
 
