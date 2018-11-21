@@ -103,6 +103,9 @@
         });
 
 
+        parseFloat("age-selected-end").toLocaleString('en') 
+
+
         //-----end of custom initializers-----
 
         //run the default search when page loads
