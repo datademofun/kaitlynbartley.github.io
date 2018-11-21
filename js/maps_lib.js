@@ -103,7 +103,7 @@
         });
 
 
-        parseFloat("age-selected-end").toLocaleString('en') 
+        $(parseFloat("age-selected-end").toLocaleString('en')) 
 
 
         //-----end of custom initializers-----
