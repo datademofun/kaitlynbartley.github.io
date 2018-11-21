@@ -5,7 +5,7 @@
         options = options || {};
 
         this.recordName = options.recordName || "zip code"; //for showing a count of results
-        this.recordNamePlural = options.recordNamePlural || "results";
+        this.recordNamePlural = options.recordNamePlural || "zip codes";
         this.searchRadius = options.searchRadius || 805; //in meters ~ 1/2 mile
 
         // the encrypted Table ID of your Fusion Table (found under File => About)
