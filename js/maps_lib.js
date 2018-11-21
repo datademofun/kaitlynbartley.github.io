@@ -112,8 +112,8 @@
     //-----custom functions-----
 
     MapsLib.prototype.addCommas = function() {    
-        var number = "age-selected-end";
-        number.toLocaleString("en");
+        var n = "age-selected-end";
+        n.toLocaleString("en");
     };
 
 
