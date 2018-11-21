@@ -95,7 +95,7 @@
             step: 5,
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
-                $("#age-selected-end").number(ui.values[0]);
+                $("#age-selected-end").html(ui.values[0]);
             },
             stop: function(event, ui) {
               self.doSearch();
