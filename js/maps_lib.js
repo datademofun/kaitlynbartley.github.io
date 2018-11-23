@@ -87,7 +87,7 @@
 
         //-----custom initializers-----
         $("#age-slider").slider({
-            orientation: "vertical",
+            orientation: "horizontal",
             range: false,
             min: 0,
             max: 1077300,
