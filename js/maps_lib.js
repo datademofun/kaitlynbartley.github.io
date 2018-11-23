@@ -341,12 +341,12 @@
     };
 
 
-    // MapsLib.prototype.displaySelectedIncome = function (json) {
-    //     var self = this
-    //     var income = 0
-    //     $("#selectedincome").html(self.addCommas(0);
-    //     };
-    // };
+    MapsLib.prototype.displaySelectedIncome = function (json) {
+        var self = this
+        var income = 0
+        $("#selectedincome").html(self.addCommas(income);
+        };
+    };
 
 
     MapsLib.prototype.addCommas = function (nStr) {
