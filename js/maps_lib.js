@@ -96,7 +96,7 @@
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
                 // $("#selectedincome").html(ui.values[0]);
-                $("#selectedincome").html(addCommas(ui.values[0]));
+                $("#selectedincome").html(self.addCommas(ui.values[0]));
             },
             stop: function(event, ui) {
               self.doSearch();
