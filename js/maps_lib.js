@@ -341,15 +341,15 @@
     };
 
 
-    MapsLib.prototype.displaySelectedIncome = function (json) {
-        var self = this;
+    // MapsLib.prototype.displaySelectedIncome = function (json) {
+    //     var self = this;
 
-        var income = 0;
-        if (json["selectedincome"] != null) {
-            numRows = json["selectedincome"][0];
-        }
-        $("#selectedincome").html(self.addCommas(income);
-    };
+    //     var income = 0;
+    //     if (json["selectedincome"] != null) {
+    //         numRows = json["selectedincome"][0];
+    //     }
+    //     $("#selectedincome").html(self.addCommas(income);
+    // };
 
 
     MapsLib.prototype.addCommas = function (nStr) {
