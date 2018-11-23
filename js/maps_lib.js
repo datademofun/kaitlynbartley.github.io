@@ -111,10 +111,10 @@
 
     //-----custom functions-----
 
-    // MapsLib.prototype.addCommas = function() {    
-    //     var n = "age-selected-end";
-    //     n.toLocaleString("en");
-    // };
+    MapsLib.prototype.addCommas = function ("age-selected-end") {    
+        var n = "age-selected-end";
+        n.toLocaleString("en");
+    };
 
 
 
