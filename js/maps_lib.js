@@ -98,8 +98,7 @@
                 $("#selectedincome").html(self.addCommas(ui.values[0]));
             },
             stop: function(event, ui) {
-              self.doSearch(),
-            signature:.slider('values',[values]);
+              self.doSearch();
             }
         });
 
