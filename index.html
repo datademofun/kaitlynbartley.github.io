@@ -61,6 +61,10 @@
             </ul>
             <h4>
               Select income:
+                $function () {    
+                var n = "age-selected-end";
+                n.toLocaleString("en");
+                };
 <!--               <small> -->
 <!--                 $<span id='age-selected-start'></span>
                 - -->
@@ -152,10 +156,6 @@
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
 
-        $function () {    
-        var n = "age-selected-end";
-          n.toLocaleString("en");
-        };
         
         $(function() {
           var myMap = new MapsLib({
