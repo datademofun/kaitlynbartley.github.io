@@ -340,6 +340,13 @@
         $("#result_box").fadeIn();
     };
 
+     MapsLib.prototype.displayselectedincome = function (json) {
+        var self = this;
+        
+        var n = 0;
+        $("#selecte").html(self.addCommas(n);
+    };
+
     MapsLib.prototype.addCommas = function (nStr) {
         nStr += '';
         x = nStr.split('.');
