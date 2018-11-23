@@ -86,7 +86,7 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
-        $("#blue").slider({
+        $("#age-slider").slider({
             orientation: "horizontal",
             range: false,
             min: 0,
