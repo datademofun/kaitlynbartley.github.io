@@ -341,9 +341,7 @@
     };
 
      MapsLib.prototype.displayselectedincome = function (json) {
-        
-        var n = 0;
-        $("#selectedincome").html(self.addCommas(n);
+        $("#selectedincome").html(self.addCommas();
     };
 
     MapsLib.prototype.addCommas = function (nStr) {
