@@ -341,6 +341,12 @@
     };
 
 
+    MapsLib.prototype.displaySelectedIncome = function (json) {
+        $("#result_count").html(self.addCommas();
+        });
+    };
+
+
     MapsLib.prototype.addCommas = function (nStr) {
         nStr += '';
         x = nStr.split('.');
@@ -352,7 +358,6 @@
         }
         return x1 + x2;
     };
-
 
     // maintains map centerpoint for responsive design
     MapsLib.prototype.calculateCenter = function () {
