@@ -342,6 +342,7 @@
 
 
     MapsLib.prototype.displaySelectedIncome = function (json) {
+        var self = this
         $("#selectedincome").html(self.addCommas();
         };
     };
