@@ -355,7 +355,7 @@
 
     MapsLib.prototype.addCommas = function (nStr) {
         var nStr = '';
-        console.log(nStr.toLocaleString('en'));
+        console.log(nStr.toLocaleString('en', {useGrouping:true}));
     };
 
     // maintains map centerpoint for responsive design
