@@ -340,7 +340,7 @@
         $("#result_box").fadeIn();
     };
 
-    MapsLib.prototype.addCommas = function (selectedincome) {
+    MapsLib.prototype.addCommas = function (nString) {
         nStr += '';
         x = nStr.split('.');
         x1 = x[0];
