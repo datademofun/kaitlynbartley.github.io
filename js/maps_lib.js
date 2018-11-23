@@ -342,8 +342,11 @@
 
 
     MapsLib.prototype.displaySelectedIncome = function (json) {
-        var self = this
-        var income = 0
+        var self = this;
+        var income = 0;
+        if (json["selectedincome"] != null) {
+            numRows = json["selectedincome"][0];
+        }
         $("#selectedincome").html(self.addCommas(income);
         };
     };
@@ -354,7 +357,7 @@
         x = nStr.split('.');
         x1 = x[0];
         x2 = x.length > 1 ? '.' + x[1] : '';
-        var rgx = /(\d+)(\d{3})/;
+        var rgx = /(\d+)(\d{3})/; 
         while (rgx.test(x1)) {
             x1 = x1.replace(rgx, '$1' + ',' + '$2');
         }
