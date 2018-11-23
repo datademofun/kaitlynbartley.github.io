@@ -340,9 +340,6 @@
         $("#result_box").fadeIn();
     };
 
-     MapsLib.prototype.displayselectedincome = function (json) {
-        $("#selectedincome").html(self.addCommas();
-    };
 
     MapsLib.prototype.addCommas = function (nStr) {
         nStr += '';
