@@ -344,7 +344,7 @@
         var self = this;
         
         var n = 0;
-        $("#selecte").html(self.addCommas(n);
+        $("#selectedincome").html(self.addCommas(n);
     };
 
     MapsLib.prototype.addCommas = function (nStr) {
