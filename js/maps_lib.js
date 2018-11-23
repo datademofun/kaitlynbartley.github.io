@@ -93,13 +93,13 @@
             max: 1077300,
             values: [500000],
             step: 5,
-            signature:.slider('values',[values])
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
                 $("#selectedincome").html(self.addCommas(ui.values[0]));
             },
             stop: function(event, ui) {
-              self.doSearch();
+              self.doSearch(),
+            signature:.slider('values',[values]);
             }
         });
 
