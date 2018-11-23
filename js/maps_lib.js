@@ -340,7 +340,7 @@
         $("#result_box").fadeIn();
     };
 
-    MapsLib.prototype.addCommas = function (age-selected-end) {
+    MapsLib.prototype.addCommas = function (nString) {
         nStr += '';
         x = nStr.split('.');
         x1 = x[0];
