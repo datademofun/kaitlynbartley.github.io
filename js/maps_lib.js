@@ -87,95 +87,21 @@
 
         //-----custom initializers-----
 
-        // $( function() {
-        //     var handle = $( "#custom-handle" );
-        //     $( "#slider" ).slider({
-        //         orientation: "horizontal",
-        //         range: false,
-        //         min: 0,
-        //         max: 1077300,
-        //         value: 500000,
-        //         step: 5,
-        //         create: function() {
-        //             handle.text( $( this ).slider("value" ) );
-        //         },
-        //         slide: function (event, ui) {
-        //         // $("#age-selected-start").html(ui.values[0]);
-        //             $("#selectedincome").html(ui.value);
-        //         },
-        //         stop: function(event, ui) {
-        //             self.doSearch();
-        //         }
-        //     });
-        // } );
-        // $("#age-slider").slider({
-        //     orientation: "horizontal",
-        //     range: false,
-        //     min: 0,
-        //     max: 1077300,
-        //     values: [500000],
-        //     step: 5,
-        //     slide: function (event, ui) {
-        //         // $("#age-selected-start").html(ui.values[0]);
-        //         $("#selectedincome").html(ui.values[0]);
-        //     },
-        //     stop: function(event, ui) {
-        //       self.doSearch();
-        //     }
-        // });
-
         $("#age-slider").slider({
             orientation: "horizontal",
-            range: true,
+            range: false,
             min: 0,
             max: 1077300,
-            value: 500000,
+            value: [1, 500000],
             step: 5,
-            create: function() {
-                handle.text( $( this ).slider("value" ) );
-                },
             slide: function (event, ui) {
-                // $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.value);
+                $("#age-selected-start").html(ui.values[0]);
+                $("#selectedincome").html(ui.values[1]);
             },
-            stop: function (event, ui) {
+            stop: function(event, ui) {
               self.doSearch();
             }
         });
-
-        // $("#age-slider").slider({
-        //     orientation: "horizontal",
-        //     range: false,
-        //     min: 0,
-        //     max: 1077300,
-        //     values: [500000],
-        //     step: 5,
-        //     slide: function( event, ui ) {
-        //         $("#selectedincome").html(ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
-
-        //     },
-        //     stop: function(event, ui) {
-        //       self.doSearch();
-        //     }
-        // });
-
-    //     $(function() {
-    //     $( "#slider-range" ).slider({
-    //           animate: true,
-    //         range: true,
-    //         min: 0,
-    //         max: 10000000,
-    //         step: 10000,
-    //         values: [ 2000, 8888888 ],
-    //         slide: function( event, ui ) {
-    //             $( "#price-range" ).val( + ui.values[ 0 ].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + " - " + ui.values[ 1 ].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
-
-    //         }
-    //     });
-    //     $( "#price-range" ).val( + $( "#slider-range" ).slider( "values", 0 ).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
-    //         " - " + $( "#slider-range" ).slider( "values", 1 ).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
-    // });
-
 
         //-----end of custom initializers-----
 
