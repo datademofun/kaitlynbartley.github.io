@@ -111,7 +111,7 @@
             step: 5,
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.values[0].toLocaleString('us-US'));
+                $("#selectedincome").html(ui.values[0]);
             },
             stop: function (event, ui) {
               self.doSearch();
