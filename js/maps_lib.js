@@ -109,7 +109,7 @@
             max: 1077300,
             values: [500000],
             step: 5,
-            format: { format: '##.0', locale: 'en'},
+            formatter: { format: '##.0', locale: 'en'},
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
                 $("#selectedincome").html(ui.values[0]);
