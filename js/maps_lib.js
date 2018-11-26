@@ -101,7 +101,7 @@
                 },
                 slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
-                    $("#selectedincome").html("$" + ui.value[0]);
+                    $("#selectedincome").html(ui.value[0]);
                 },
                 stop: function(event, ui) {
                     self.doSearch();
