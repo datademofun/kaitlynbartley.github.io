@@ -86,6 +86,18 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
+
+        $( function() {
+            var handle = $( "#custom-handle" );
+            $( "#slider" ).slider({
+                create: function() {
+                    handle.text( $( this ).slider( "value" ) );
+                },
+                slide: function( event, ui ) {
+                    handle.text( ui.value );
+                }
+            });
+        } );
         // $("#age-slider").slider({
         //     orientation: "horizontal",
         //     range: false,
@@ -102,21 +114,21 @@
         //     }
         // });
 
-        $("#age-slider").slider({
-            orientation: "horizontal",
-            range: true,
-            min: 0,
-            max: 1077300,
-            values: [0, 500000],
-            step: 5,
-            slide: function (event, ui) {
-                $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.values[1].toLocaleString("en"));
-            },
-            stop: function (event, ui) {
-              self.doSearch();
-            }
-        });
+        // $("#age-slider").slider({
+        //     orientation: "horizontal",
+        //     range: true,
+        //     min: 0,
+        //     max: 1077300,
+        //     values: [0, 500000],
+        //     step: 5,
+        //     slide: function (event, ui) {
+        //         $("#age-selected-start").html(ui.values[0]);
+        //         $("#selectedincome").html(ui.values[1].toLocaleString("en"));
+        //     },
+        //     stop: function (event, ui) {
+        //       self.doSearch();
+        //     }
+        // });
 
         // $("#age-slider").slider({
         //     orientation: "horizontal",
