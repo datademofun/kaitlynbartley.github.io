@@ -109,10 +109,9 @@
             max: 1077300,
             values: [500000],
             step: 5,
-            formatter: { format: '##.0', locale: 'en'},
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.values[0]);
+                $("#selectedincome").val(ui.values[0].toLocaleString("en"));
             },
             stop: function(event, ui) {
               self.doSearch();
