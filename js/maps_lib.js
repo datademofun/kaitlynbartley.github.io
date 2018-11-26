@@ -86,6 +86,22 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
+        // $("#age-slider").slider({
+        //     orientation: "horizontal",
+        //     range: false,
+        //     min: 0,
+        //     max: 1077300,
+        //     value: [500000],
+        //     step: 5,
+        //     slide: function (event, ui) {
+        //         // $("#age-selected-start").html(ui.values[0]);
+        //         $("#selectedincome").html(ui.value[0]);
+        //     },
+        //     stop: function(event, ui) {
+        //       self.doSearch();
+        //     }
+        // });
+
         $("#age-slider").slider({
             orientation: "horizontal",
             range: false,
@@ -95,7 +111,7 @@
             step: 5,
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.value[0]);
+                $("#selectedincome").val(formatNumber(ui.value[0]));
             },
             stop: function(event, ui) {
               self.doSearch();
@@ -110,6 +126,19 @@
     };
 
     //-----custom functions-----
+
+    var formatNumber = function(number) {
+        number += "";
+        var parts = number.split('.');
+        var integer = parts[0];
+        var decimal = parts.length &gt; 1 ? '.' + parts[1] : '';
+        var regex = /(\d+)(\d{3})/;
+        while (regex.test(decimal))
+        {
+            integer = integer.replace(regex, '$1' + ',' + '$2');
+        }
+        return integer + decimal;
+    };
 
 
     //-----end of custom functions-----
