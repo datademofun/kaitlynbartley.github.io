@@ -86,6 +86,22 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
+        // $("#age-slider").slider({
+        //     orientation: "horizontal",
+        //     range: false,
+        //     min: 0,
+        //     max: 1077300,
+        //     values: [500000],
+        //     step: 5,
+        //     slide: function (event, ui) {
+        //         // $("#age-selected-start").html(ui.values[0]);
+        //         $("#selectedincome").html(ui.values[0]);
+        //     },
+        //     stop: function(event, ui) {
+        //       self.doSearch();
+        //     }
+        // });
+
         $("#age-slider").slider({
             orientation: "horizontal",
             range: false,
@@ -93,14 +109,31 @@
             max: 1077300,
             values: [500000],
             step: 5,
-            slide: function (event, ui) {
-                // $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.values[0]);
+            slide: function( event, ui ) {
+                $("#selectedincome").val( + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+
             },
             stop: function(event, ui) {
               self.doSearch();
             }
         });
+
+    //     $(function() {
+    //     $( "#slider-range" ).slider({
+    //           animate: true,
+    //         range: true,
+    //         min: 0,
+    //         max: 10000000,
+    //         step: 10000,
+    //         values: [ 2000, 8888888 ],
+    //         slide: function( event, ui ) {
+    //             $( "#price-range" ).val( + ui.values[ 0 ].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + " - " + ui.values[ 1 ].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+
+    //         }
+    //     });
+    //     $( "#price-range" ).val( + $( "#slider-range" ).slider( "values", 0 ).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
+    //         " - " + $( "#slider-range" ).slider( "values", 1 ).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+    // });
 
 
         //-----end of custom initializers-----
