@@ -113,11 +113,11 @@
                 // $("#age-selected-start").html(ui.values[0]);
                 $("#selectedincome").html(ui.values[0]);
             },
-            stop: function(event, ui) {
+            stop: function (event, ui) {
               self.doSearch();
             }
             formatted: function (event, ui) {
-                $("#selectedincome".html(uivalues[0].toLocaleString("en")))
+                $("#selectedincome".html(ui.values[0].toLocaleString("en")))
             }
         });
 
