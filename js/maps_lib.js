@@ -111,7 +111,7 @@
             step: 5,
             slide: function (event, ui) {
                 $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.values[1]);
+                $("#selectedincome").html(ui.values[1].toLocaleString("us-US"));
             },
             stop: function (event, ui) {
               self.doSearch();
@@ -252,7 +252,7 @@
         if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
 
         self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' >= '" + $("#age-selected-start").html() + "'";
-        self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' <= '" + $("#selectedincome").html() + "'";
+        self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' <= '" + $("#selectedincome").html(number()) + "'";
 
         //-----end of custom filters-----
 
