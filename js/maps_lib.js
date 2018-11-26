@@ -91,10 +91,6 @@
             range: false,
             min: 0,
             max: 1077300,
-            formatter:function(val){
-                var values = Math.round(val * 5) / 5,
-                 decimal = values - Math.round(val);
-                return decimal == 0 ? values.toString() + ".0" : value.toString();
             values: [500000],
             step: 5,
             slide: function (event, ui) {
