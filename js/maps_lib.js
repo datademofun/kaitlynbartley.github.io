@@ -14,21 +14,21 @@
         // Found at https://console.developers.google.com/
         // Important! this key is for demonstration purposes. please register your own.
         this.googleApiKey = options.googleApiKey || "",
-        
+
         // name of the location column in your Fusion Table.
         // NOTE: if your location column name has spaces in it, surround it with single quotes
         // example: locationColumn:     "'my location'",
         this.locationColumn = options.locationColumn || "geometry";
-        
+
         // appends to all address searches if not present
         this.locationScope = options.locationScope || "";
 
         // zoom level when map is loaded (bigger is more zoomed in)
-        this.defaultZoom = options.defaultZoom || 8; 
+        this.defaultZoom = options.defaultZoom || 8;
 
         // center that your map defaults to
         this.map_centroid = new google.maps.LatLng(options.map_center[0], options.map_center[1]);
-        
+
         // the current center of the map
         this.current_center = this.map_centroid
 
@@ -55,16 +55,16 @@
                 ]
             }
         ];
-        
+
         this.myOptions = {
             zoom: this.defaultZoom,
             center: this.map_centroid,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            styles: basemapStyles 
+            styles: basemapStyles
         };
         this.geocoder = new google.maps.Geocoder();
         this.map = new google.maps.Map($("#map_canvas")[0], this.myOptions);
-        
+
         // maintains map centerpoint for responsive design
         google.maps.event.addDomListener(self.map, 'idle', function () {
             self.calculateCenter();
@@ -77,11 +77,11 @@
         //reset filters
         $("#search_address").val(self.convertToPlainString($.address.parameter('address')));
         var loadRadius = self.convertToPlainString($.address.parameter('radius'));
-        if (loadRadius != "") 
+        if (loadRadius != "")
             $("#search_radius").val(loadRadius);
-        else 
+        else
             $("#search_radius").val(self.searchRadius);
-        
+
         $(":checkbox").prop("checked", "checked");
         $("#result_box").hide();
 
@@ -95,8 +95,16 @@
             values: [1, 500000],
             step: 5,
             slide: function (event, ui) {
-                $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").html(ui.values[1]);
+
+                var slideLowVal = ui.values[0]
+                $("#age-selected-start").html(slideLowVal.toLocaleString());
+                $("#age-selected-start").data('money', slideLowVal);
+
+                var slideHighVal = ui.values[1]
+                $("#selectedincome").html(slideHighVal.toLocaleString());
+                $("#selectedincome").data('money', slideHighVal);
+
+//                console.log($("#age-selected-start").data('money') + ' to: ' + $("#selectedincome").data('money'))
             },
             stop: function(event, ui) {
               self.doSearch();
@@ -195,15 +203,15 @@
         var address = $("#search_address").val();
         self.searchRadius = $("#search_radius").val();
         self.whereClause = self.locationColumn + " not equal to ''";
-        
+
         //-----custom filters-----
         var type_column = "'RENT1/BUY2'";
 
         if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
         if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
 
-        self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' >= '" + $("#age-selected-start").html() + "'";
-        self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' <= '" + $("#selectedincome").html() + "'";
+        self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' >= '" + $("#age-selected-start").data('money') + "'";
+        self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' <= '" + $("#selectedincome").data('money') + "'";
 
         //-----end of custom filters-----
 
@@ -326,7 +334,7 @@
 
     MapsLib.prototype.displaySearchCount = function (json) {
         var self = this;
-        
+
         var numRows = 0;
         if (json["rows"] != null) {
             numRows = json["rows"][0];
@@ -347,7 +355,7 @@
         x = nStr.split('.');
         x1 = x[0];
         x2 = x.length > 1 ? '.' + x[1] : '';
-        var rgx = /(\d+)(\d{3})/; 
+        var rgx = /(\d+)(\d{3})/;
         while (rgx.test(x1)) {
             x1 = x1.replace(rgx, '$1' + ',' + '$2');
         }
@@ -368,11 +376,11 @@
 
     MapsLib.prototype.clearSearch = function () {
         var self = this;
-        if (self.searchrecords && self.searchrecords.getMap) 
+        if (self.searchrecords && self.searchrecords.getMap)
             self.searchrecords.setMap(null);
-        if (self.addrMarker && self.addrMarker.getMap) 
+        if (self.addrMarker && self.addrMarker.getMap)
             self.addrMarker.setMap(null);
-        if (self.searchRadiusCircle && self.searchRadiusCircle.getMap) 
+        if (self.searchRadiusCircle && self.searchRadiusCircle.getMap)
             self.searchRadiusCircle.setMap(null);
     };
 
