@@ -116,9 +116,6 @@
             stop: function (event, ui) {
               self.doSearch();
             }
-            formatted: function (event, ui) {
-                $("#selectedincome".html(ui.values[0].toLocaleString("en")));
-            }
         });
 
         // $("#age-slider").slider({
