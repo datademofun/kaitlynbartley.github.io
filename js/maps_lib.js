@@ -117,7 +117,7 @@
               self.doSearch();
             }
             formatted: function (event, ui) {
-                $("#selectedincome".html(ui.values[0].toLocaleString("en")))
+                $("#selectedincome".html(ui.values[0].toLocaleString("en")));
             }
         });
 
