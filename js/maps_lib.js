@@ -86,6 +86,26 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
+        $("#age-slider").slider({
+            orientation: "horizontal",
+            range: false,
+            min: 0,
+            max: 1077300,
+            formatter:function(val){
+                var values = Math.round(val * 5) / 5,
+                 decimal = values - Math.round(val);
+                return decimal == 0 ? values.toString() + ".0" : value.toString();
+            values: [500000],
+            step: 5,
+            slide: function (event, ui) {
+                // $("#age-selected-start").html(ui.values[0]);
+                $("#selectedincome").html(ui.values[0]);
+            },
+            stop: function(event, ui) {
+              self.doSearch();
+            }
+        });
+
         // $("#age-slider").slider({
         //     orientation: "horizontal",
         //     range: false,
@@ -93,30 +113,14 @@
         //     max: 1077300,
         //     values: [500000],
         //     step: 5,
-        //     slide: function (event, ui) {
-        //         // $("#age-selected-start").html(ui.values[0]);
-        //         $("#selectedincome").html(ui.values[0]);
+        //     slide: function( event, ui ) {
+        //         $("#selectedincome").html(ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+
         //     },
         //     stop: function(event, ui) {
         //       self.doSearch();
         //     }
         // });
-
-        $("#age-slider").slider({
-            orientation: "horizontal",
-            range: false,
-            min: 0,
-            max: 1077300,
-            values: [500000],
-            step: 5,
-            slide: function( event, ui ) {
-                $("#selectedincome").html(ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
-
-            },
-            stop: function(event, ui) {
-              self.doSearch();
-            }
-        });
 
     //     $(function() {
     //     $( "#slider-range" ).slider({
@@ -373,17 +377,6 @@
         });
         $("#result_box").fadeIn();
     };
-
-
-    // MapsLib.prototype.displaySelectedIncome = function (json) {
-    //     var self = this;
-
-    //     var income = 0;
-    //     if (json["selectedincome"] != null) {
-    //         numRows = json["selectedincome"][0];
-    //     }
-    //     $("#selectedincome").html(self.addCommas(income);
-    // };
 
 
     MapsLib.prototype.addCommas = function (nStr) {
