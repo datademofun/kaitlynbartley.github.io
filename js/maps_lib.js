@@ -110,7 +110,7 @@
             values: [500000],
             step: 5,
             slide: function( event, ui ) {
-                $("#selectedincome").val( + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+                $("#selectedincome").html(ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
 
             },
             stop: function(event, ui) {
