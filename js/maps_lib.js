@@ -111,7 +111,7 @@
             step: 5,
             slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
-                $("#selectedincome").val(formatNumber(ui.value[0]));
+                $("#selectedincome").html(formatNumber(ui.value[0]));
             },
             stop: function(event, ui) {
               self.doSearch();
