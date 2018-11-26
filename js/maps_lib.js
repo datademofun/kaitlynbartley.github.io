@@ -94,10 +94,10 @@
                 range: false,
                 min: 0,
                 max: 1077300,
-                values: 500000,
+                value: 500000,
                 step: 5,
                 create: function() {
-                    handle.text( $( this ).slider("values" ) );
+                    handle.text( $( this ).slider("value" ) );
                 },
                 slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
