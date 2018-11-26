@@ -89,7 +89,7 @@
 
         $("#age-slider").slider({
             orientation: "horizontal",
-            range: min,
+            range: false,
             min: 0,
             max: 1077300,
             values: [1, 500000],
