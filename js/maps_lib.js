@@ -97,7 +97,7 @@
                 value: 500000,
                 step: 5,
                 create: function() {
-                    handle.text( $( this ).slider( "value" ) );
+                    handle.text( $( this ).slider("$" + "value" ) );
                 },
                 slide: function (event, ui) {
                 // $("#age-selected-start").html(ui.values[0]);
