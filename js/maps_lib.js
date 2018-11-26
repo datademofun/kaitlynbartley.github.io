@@ -133,7 +133,7 @@
         var integer = parts[0];
         var decimal = parts.length &gt; 1 ? '.' + parts[1] : '';
         var regex = /(\d+)(\d{3})/;
-        while (regex.test(decimal))
+        while (regex.test(integer))
         {
             integer = integer.replace(regex, '$1' + ',' + '$2');
         }
