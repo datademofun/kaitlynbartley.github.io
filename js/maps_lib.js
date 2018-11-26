@@ -202,7 +202,7 @@
         if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
         if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
 
-        // self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' >= '" + $("#age-selected-start").html() + "'";
+        self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' >= '" + $("#age-selected-start").html() + "'";
         self.whereClause += " AND 'INCOMEREQUIREDTORENTORBUY' <= '" + $("#selectedincome").html() + "'";
 
         //-----end of custom filters-----
