@@ -90,6 +90,11 @@
         $( function() {
             var handle = $( "#custom-handle" );
             $( "#slider" ).slider({
+                range: false,
+                min: 0
+                max: 1077300
+                value: 500000
+                step: 5
                 create: function() {
                     handle.text( $( this ).slider( "value" ) );
                 },
